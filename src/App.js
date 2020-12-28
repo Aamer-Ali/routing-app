@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Navbar from "./components/navbar";
@@ -15,7 +14,11 @@ function App() {
       <Navbar />
       <div className="content">
         <Switch>
-          <Route path="/products" component={Products} />
+          <Route path="/products/:id" component={ProductDetails} />
+          <Route
+            path="/products"
+            render={(props) => <Products sortBy="newest" {...props} />}
+          />
           <Route path="/posts" component={Posts} />
           <Route path="/admin" component={Dashboard} />
           <Route path="/" component={Home} />

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 class ProductDetails extends Component {
   state = {};
-  handleSave = () => {};
+  handleSave = () => {
+    this.props.history.replace("/products");
+  };
 
   render() {
     return (
